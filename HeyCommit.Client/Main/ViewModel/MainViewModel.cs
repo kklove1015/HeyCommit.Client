@@ -11,8 +11,27 @@ namespace HeyCommit.Client.Main.ViewModel
 {
     public class MainViewModel : MvvmBase
     {
+
+        //private Brush onBackground;
+        //public Brush OnBackground 
+        //{
+        //    get => onBackground;
+        //    set
+        //    {
+        //        onBackground = value;
+        //    }
+        //} 
+        //private Brush onForeground;
+        //public Brush OnForeground
+        //{
+        //    get => onForeground;
+        //    set
+        //    {
+        //        onForeground = value;
+        //    }
+        //}
         public Brush OnBackground { get; set; } = Brushes.White;
-        public Brush OnForeground { get; set; } = Brushes.Black;
+        public Brush OnForeground { get; set; }= Brushes.Black;
         public Brush OffBackground { get; set; } = Brushes.White;
         public Brush OffForeground { get; set; } = Brushes.Black;
 
@@ -42,6 +61,7 @@ namespace HeyCommit.Client.Main.ViewModel
                 if (onIsChecked) 
                 {
                     TextBoxIsEnabled = false;
+                
                 }
                 NotifyPropertyChanged("OnIsChecked");
             }
@@ -56,6 +76,7 @@ namespace HeyCommit.Client.Main.ViewModel
                 if (offIsChecked) 
                 {
                     TextBoxIsEnabled = true;
+                   
                 }
                 NotifyPropertyChanged("OffIsChecked");
             }
