@@ -1,0 +1,17 @@
+﻿<Window x:Class="HeyCommit.Client.Member.View.LoginView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:HeyCommit.Client.Member.View"
+        mc:Ignorable="d" WindowStartupLocation="CenterScreen" SizeToContent="WidthAndHeight"
+        Title="HeyCommit" Height="200" Width="250" MinHeight="200" MinWidth="250" MaxHeight="200" MaxWidth="250">
+    <Grid Margin="20">
+        <StackPanel>
+            <TextBox Text="{Binding LoginText}" Margin="0 5"/>
+            <PasswordBox Margin="0 5"/>
+            <Button Content="Login" Command="{Binding LoginButton}" Margin="0 5"/>
+            <Button Content="Sign Up"/>
+        </StackPanel>
+    </Grid>
+</Window>

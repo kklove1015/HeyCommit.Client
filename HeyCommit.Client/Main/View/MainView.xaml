@@ -1,0 +1,59 @@
+﻿<Window x:Class="HeyCommit.Client.Main.View.MainView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:HeyCommit.Client.Main.View"
+        mc:Ignorable="d" WindowStartupLocation="CenterScreen" SizeToContent="WidthAndHeight"
+        Title="HeyCommit" Height="450" Width="600" MinHeight="450" MinWidth="600" MaxHeight="450" MaxWidth="600">
+    <Grid>
+        <Grid Margin="5">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="5"/>
+                <ColumnDefinition Width="auto"/>
+                <ColumnDefinition Width="10"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="5"/>
+            </Grid.ColumnDefinitions>
+            <Expander ExpandDirection="Right"
+                  MinHeight="400"
+                  SizeChanged="Expander_SizeChanged"
+                  BorderThickness="0,0,0.8,0" BorderBrush="Gray"
+                  Grid.Column="1">
+                <Expander.Header>
+                    <TextBlock Text="Setting" RenderTransformOrigin=".5,.5" Margin="5"/>
+                </Expander.Header>
+                <StackPanel>
+                    <TextBlock Text="Setting List" FontWeight="Bold"/>
+                    <Button Content="Slack" Background="white" Foreground="Black" BorderThickness="0" Height="30" Cursor="Hand"
+                            Command="{Binding SlackButton}"/>
+                    <Button Content="Kakao" Background="white" Foreground="Black" BorderThickness="0" Height="30" Cursor="Hand"
+                            Command="{Binding KakaoButton}"/>
+                </StackPanel>
+            </Expander>
+            <Grid Grid.Column="3" Margin="10">
+                <StackPanel>
+                    <Grid HorizontalAlignment="Center" Margin="5">
+                        <TabPanel>
+                            <RadioButton Width="50" Height="20" Content="ON"
+                                 Style="{StaticResource {x:Type ToggleButton}}"
+                                 Foreground="{Binding OnForeground}"
+                                 Background="{Binding OnBackground}"
+                                 IsChecked="{Binding OnIsChecked, UpdateSourceTrigger=PropertyChanged}"/>
+                            <RadioButton Width="50" Height="20" Content="OFF"
+                                 Style="{StaticResource {x:Type ToggleButton}}"
+                                 Foreground="{Binding OffForeground}"
+                                 Background="{Binding OffBackground}"
+                                 IsChecked="{Binding OffIsChecked, UpdateSourceTrigger=PropertyChanged}"/>
+                        </TabPanel>
+                    </Grid>
+                    <TextBox Text="{Binding GitId}" IsEnabled="{Binding TextBoxIsEnabled}" Margin="5"/>
+                    <TextBox Text="{Binding GitToken}" IsEnabled="{Binding TextBoxIsEnabled}" Margin="5"/>
+                    <TextBox Text="{Binding BotToken}" IsEnabled="{Binding TextBoxIsEnabled}" Margin="5"/>
+                    <TextBox Text="{Binding ChannelId}" IsEnabled="{Binding TextBoxIsEnabled}" Margin="5"/>
+                    <TextBox Text="{Binding BotText}" IsEnabled="{Binding TextBoxIsEnabled}" Margin="5"/>
+                </StackPanel>
+            </Grid>
+        </Grid>
+    </Grid>
+</Window>
